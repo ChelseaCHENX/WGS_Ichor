@@ -1,0 +1,57 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: ngs-pipeline configuration file
+
+type: object
+
+properties:
+    patients:
+        type: string
+        description: filepath to CSV file with patient column
+    units:
+        type: string
+        description: filepath to CSV file with detailed info on each sample
+    ref_dir:
+        type: string
+        description: filepath to directory where reference genome assembly is located
+    ref_fasta:
+        type: string
+        description: filename of reference genome FASTA file - must be in ref_dir
+    known_sites:
+        type: string
+        description: comma separated list of filenames containing known variants. These files should be in ref_dir
+    germline_resource:
+        type: string
+        description: filepath to gnomAD allele frequency only VCF file - can be downloaded from GATK Resource Bundle
+    contamination_resource:
+        type: string
+        description: filepath to VCF file with gnomAD biallelic variants - can be downloaded from GATK Resource Bundle
+    vep_dir:
+        type: string
+        description: path to folder where Ensembl Variant Annotation cache files are stored. Both cache and FASTA file are required. See https://uswest.ensembl.org/info/docs/tools/vep/script/vep_cache.html#cache for info on installing these files
+    assembly_version:
+        type: string
+        description: name of assembly to use. Use GRCh38 if you did a vanilla VEP install
+    center_name:
+        type: string
+        description: name of lab where data was processed. Included in the MAF file generated from vcf2maf
+    use_pon:
+        type: boolean
+        description: use panel of normals for variant calling
+    pon_vcf:
+        type: string
+        description: filepath for PON VCF. To build PON from normal samples, set as None
+
+required:
+    - patients
+    - units
+    - ref_dir
+    - ref_fasta
+    - known_sites
+    - germline_resource
+    - contamination_resource
+    - vep_dir
+    - assembly_version
+    - center_name
+    - use_pon
+    - pon_vcf

@@ -1,0 +1,2 @@
+patient,sample,platform,readgroup,fq1,fq2,seqtype
+IPMBO46_P6,tumor,ILLUMNIA,rg2,/bgfs/alee/LO_LAB/General/Lab_Data/102523_PDO_WGS5x/IPMBO46_P6_LEE6052A11_S17_R1_001.fastq.gz,/bgfs/alee/LO_LAB/General/Lab_Data/102523_PDO_WGS5x/IPMBO46_P6_LEE6052A11_S17_R2_001.fastq.gz,WGS
